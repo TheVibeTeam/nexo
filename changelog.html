@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de cambios Â· Nexo</title>
+  <meta name="description" content="Historial de versiones publicadas de Nexo, en formato Keep a Changelog con numeraciÃ³n Semantic Versioning.">
+  <link rel="icon" type="image/png" href="assets/nexo-icon.png">
+  <link rel="stylesheet" href="style.css?v=1.0.5">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="brand"><img src="assets/nexo-icon.png" alt="" class="brand-mark">Nexo</a>
+      <button class="mobile-menu-btn" aria-label="MenÃº">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button><nav class="nav" aria-label="Principal">
+        <a href="index.html">Inicio</a>
+        <a href="lumen.html">Lumen</a>
+        <a href="downloads.html">Descargas</a>
+        <a href="docs.html" class="active">DocumentaciÃ³n</a>
+        <a href="about.html">Acerca</a>
+        <a href="privacy.html">Privacidad</a>
+        <a href="https://github.com/auralix-studio/nexo/releases/download/v1.3.0/nexo-v1.3.0-universal.apk" class="nav-cta">Descargar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content" class="split-layout narrow">
+
+    <section class="split-sidebar" data-reveal>
+      <span class="eyebrow">Historial</span>
+      <h1 class="page-title">Registro de cambios</h1>
+      <p class="page-subtitle">
+        Historial de versiones publicadas de Nexo, de la mÃ¡s reciente a la
+        mÃ¡s antigua. El formato se basa en Keep a Changelog y la
+        numeraciÃ³n sigue Semantic Versioning.
+      </p>
+    </section>
+
+    <div class="split-content">
+
+    <section data-reveal>
+      <h2>Versión 1.2.0</h2>
+      <p>Sesión de Intranet resiliente y sistema de actualización dentro de la app.</p>
+
+      <h3>Correcciones</h3>
+      <ul>
+        <li><strong>La sesión caducada de Intranet ya no muestra datos vacíos.</strong> El servidor cerraba la sesión (<code>PHPSESSID</code> expirado) y respondía con un redirect <code>302</code> de cuerpo vacío que la app interpretaba como «sin datos», obligando a iniciar sesión una y otra vez. Ahora se detecta esa firma, se reinicia la sesión de forma transparente con las credenciales guardadas y se reintenta la petición.</li>
+      </ul>
+
+      <h3>Funcionalidades nuevas</h3>
+      <ul>
+        <li><strong>Actualizaciones desde la propia app</strong> (Android): nueva sección en <em>Ajustes → Actualizaciones</em> que muestra la versión instalada y permite buscar, descargar e instalar la nueva versión.</li>
+        <li><strong>Banner de actualización</strong> sobre el contenido cuando hay una versión lista, sin depender de las notificaciones del sistema.</li>
+        <li><strong>Notificación de actualización corregida</strong>: el permiso se solicita en el momento adecuado para que el aviso llegue en Android 13+.</li>
+      </ul>
+    </section>
+
+    <section data-reveal>
+      <h2>VersiÃ³n 1.1.1</h2>
+      <p>Primera versiÃ³n pÃºblica con el asistente Lumen integrado.</p>
+
+      <h3>Funcionalidades nuevas</h3>
+      <ul>
+        <li><strong>Lumen</strong>, asistente de inteligencia artificial on-device:
+          <ul>
+            <li>Dos variantes seleccionables durante la activaciÃ³n: Lumen Ligero (~290 MB) y Lumen EstÃ¡ndar (~530 MB).</li>
+            <li>BotÃ³n flotante de acceso con animaciÃ³n de entrada y comportamiento adaptativo al desplazamiento de la pantalla.</li>
+            <li>Pantalla de chat con generaciÃ³n de respuesta en streaming.</li>
+            <li>Sistema de clasificaciÃ³n de intenciÃ³n y selecciÃ³n dinÃ¡mica del contexto a inyectar: horario, pagos, calificaciones y base de conocimiento UPLA.</li>
+            <li>Pantalla de configuraciÃ³n dedicada accesible desde el chat: cambio de variante, limpieza del historial y eliminaciÃ³n del modelo.</li>
+            <li>Inferencia completamente local. Ninguna solicitud a servicios de IA externos durante el uso.</li>
+          </ul>
+        </li>
+        <li>IntegraciÃ³n con Microsoft Teams mediante OAuth2 Device Code Flow.</li>
+        <li>Soporte multiplataforma para Android, iOS, Web, Windows, macOS y Linux.</li>
+      </ul>
+
+      <h3>Cambios tÃ©cnicos</h3>
+      <ul>
+        <li>RefactorizaciÃ³n del dominio: modelos unificados (<code>Student</code>, <code>Payment</code>, <code>ScheduleClass</code>, entre otros).</li>
+        <li>ImplementaciÃ³n del patrÃ³n Resolver para fallback automÃ¡tico entre SIGMA e Intranet.</li>
+        <li>Persistencia de la sesiÃ³n de Intranet en <code>SharedPreferences</code>.</li>
+        <li>ActualizaciÃ³n del <code>minSdk</code> de Android de 21 a 24, requisito de MediaPipe LLM Inference.</li>
+      </ul>
+
+      <h3>Privacidad</h3>
+      <ul>
+        <li>Sin telemetrÃ­a. Sin servicios de anÃ¡lisis. Sin infraestructura propia operada por el responsable del proyecto.</li>
+        <li>DocumentaciÃ³n completa en la <a href="privacy.html">polÃ­tica de privacidad</a>.</li>
+      </ul>
+    </section>
+
+    <section data-reveal>
+      <div class="cta">
+        <h2>Versiones publicadas</h2>
+        <p>Los binarios de cada versiÃ³n estÃ¡n disponibles en el repositorio.</p>
+        <a href="https://github.com/auralix-studio/nexo/releases" class="btn btn-primary">Ver releases en GitHub</a>
+      </div>
+    </section>
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-about">
+        <a href="index.html" class="brand"><img src="assets/nexo-icon.png" alt="" class="brand-mark">Nexo</a>
+        <p>AplicaciÃ³n no oficial para estudiantes y docentes de la Universidad Peruana Los Andes. Proyecto independiente, sin afiliaciÃ³n institucional.</p>
+      </div>
+      <div>
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="downloads.html">Descargas</a></li>
+          <li><a href="lumen.html">Lumen</a></li>
+          <li><a href="install.html">InstalaciÃ³n</a></li>
+          <li><a href="https://github.com/auralix-studio/nexo/releases">Versiones</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>DocumentaciÃ³n</h4>
+        <ul>
+          <li><a href="docs.html">Ãndice</a></li>
+          <li><a href="architecture.html">Arquitectura</a></li>
+          <li><a href="faq.html">Preguntas frecuentes</a></li>
+          <li><a href="troubleshoot.html">DiagnÃ³stico</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">PolÃ­tica de privacidad</a></li>
+          <li><a href="license.html">Licencia</a></li>
+          <li><a href="https://github.com/auralix-studio/nexo/issues">Reportar un problema</a></li>
+          <li><a href="https://github.com/auralix-studio/nexo">Repositorio pÃºblico</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">Â© 2026 Alessandro Villogas Gaspar. DocumentaciÃ³n bajo Creative Commons BY 4.0.</div>
+  </footer>
+
+  <script src="app.js?v=1.0.5" defer></script>
+</body>
+</html>
